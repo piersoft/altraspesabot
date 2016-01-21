@@ -250,7 +250,7 @@ overflow-x: hidden;
   <div id="mapdiv"></div>
 <div id="infodiv" style="leaflet-popup-content-wrapper">
   <p><b>Altra Spesa<br></b>
-  Mappa con offerte odierne attorno alla tua posizione powered by @piersoft</p>
+  Mappa con offerte odierne di cibo attorno alla tua posizione. Compila il form: http://goo.gl/forms/BkByNhKRXC. Powered by @piersoft</p>
 </div>
 <div id='loader'><span class='message'>loading</span></div>
 </div>
@@ -303,7 +303,7 @@ overflow-x: hidden;
         };
         L.control.layers(baseMaps).addTo(map);
 
-       var ico=L.icon({iconUrl:'circle.png', iconSize:[20,20],iconAnchor:[0,0]});
+       var ico=L.icon({iconUrl:'foodbank.png', iconSize:[30,34],iconAnchor:[15,0]});
     //   var markers = L.markerClusterGroup({spiderfyOnMaxZoom: true, showCoverageOnHover: true,zoomToBoundsOnClick: true});
        var markers=L.featureGroup();
         function loadLayer(url)
@@ -346,16 +346,7 @@ layer.bindPopup(text);
                         {
                         var classs='circlered';
                         var marker = new L.Marker(latlng,
-                          { icon : L.divIcon
-                            (
-                            {
-                        			className : classs,
-                              iconSize : [10,10],
-                              html: '<div style="display: table; height:'+10+'px; overflow: hidden; "><div align="center" style="display: table-cell; vertical-align: middle;"><div style="width:'+10+'px;"></div></div></div>',
-                              title: feature.properties.id
-                            }
-                            )
-                          });
+                          { icon : ico    });
 
                         markers[feature.properties.id] = marker;
                       //  marker.bindPopup('',{maxWidth:200, autoPan:true});

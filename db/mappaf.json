@@ -1,0 +1,53 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    16.601585,
+                    40.668523
+                ]
+            },
+            "properties": {
+                "nome": "AltraSpesa",
+                "city": "Matera",
+                "tel": "3392768276",
+                "email": "altraspesa@gmail.com",
+                "telefono": "3392768276",
+                "distanza": "1.08 Km",
+                "foto": "http:\/\/s15.postimg.org\/5tfvkcbvv\/altraspesa.jpg",
+                "descrizione": "fittizia con parole a caso. pasta",
+                "inizio": "20\/01\/2016",
+                "fine": "22\/01\/2016",
+                "qt": "10 kg",
+                "tipologia": "offerta"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.123,
+                    40.123
+                ]
+            },
+            "properties": {
+                "nome": "AltraSpesa",
+                "city": "Matera",
+                "tel": "3392768276",
+                "email": "altraspesa@gmail.com",
+                "telefono": "3392768276",
+                "distanza": "141.47 Km",
+                "foto": "http:\/\/postimg.org\/image\/pwg8yb4j7\/",
+                "descrizione": "fittizia con parole a caso. panettone",
+                "inizio": "20\/01\/2016",
+                "fine": "22\/01\/2016",
+                "qt": "5 kg",
+                "tipologia": "offerta"
+            }
+        }
+    ]
+}

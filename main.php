@@ -49,14 +49,7 @@ function start($telegram,$update)
 			$this->create_keyboard_temp($telegram,$chat_id);
 			exit;
 			} elseif ($text == "Ricerca") {
-				$reply = "Clicca sulla graffetta (📎) e poi 'posizione'";
-				$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true);
-				$telegram->sendMessage($content);
-							$this->create_keyboard_temp($telegram,$chat_id);
-			//	$log=$today. ";new chat started;" .$chat_id. "\n";
-				exit;
-			}elseif ($text == "offerte") {
-				$reply = "Clicca sulla graffetta (📎) e poi 'posizione'";
+				$reply = "Digita la parola da cercare anteponendo il carattere - (meno) oppure clicca sulla graffetta (📎) e poi 'posizione'";
 				$content = array('chat_id' => $chat_id, 'text' => $reply,'disable_web_page_preview'=>true);
 				$telegram->sendMessage($content);
 							$this->create_keyboard_temp($telegram,$chat_id);
@@ -157,7 +150,7 @@ function start($telegram,$update)
 					$text=strtoupper($text);
 					$urlgd  ="https://spreadsheets.google.com/tq?tqx=out:csv&tq=SELECT%20%2A%20WHERE%20upper(M)%20contains%20%27";
 					$urlgd .=$text;
-					$urlgd .="%27&key=1tvU2GOOix8YfmtPADXuwGPLrR9k3p1VVvbCMdO70A3A&gid=2109201553";
+					$urlgd .="%27%20AND%20O%20IS%20NOT%20NULL&key=1tvU2GOOix8YfmtPADXuwGPLrR9k3p1VVvbCMdO70A3A&gid=2109201553";
 
 			  $inizio=1;
 			  $homepage ="";
@@ -294,7 +287,7 @@ function location_manager($telegram,$user_id,$chat_id,$location)
 			$comune=strtoupper($comune);
 			$urlgd  ="https://spreadsheets.google.com/tq?tqx=out:csv&tq=SELECT%20%2A%20WHERE%20upper(M)%20contains%20%27";
 			$urlgd .=$comune;
-			$urlgd .="%27&key=1tvU2GOOix8YfmtPADXuwGPLrR9k3p1VVvbCMdO70A3A&gid=2109201553";
+			$urlgd .="%27%20AND%20O%20IS%20NOT%20NULL&key=1tvU2GOOix8YfmtPADXuwGPLrR9k3p1VVvbCMdO70A3A&gid=2109201553";
 
 			$csv = array_map('str_getcsv',file($urlgd));
 			$count = 0;
@@ -413,7 +406,7 @@ function location_manager($telegram,$user_id,$chat_id,$location)
 
 				if($distanza[$f]['distanzamt'] !=NULL)			$temp_c1 .="\nDista: ".$distanza[$f]['distanzamt'];
 
-				if($distanza[$f]['descrizione	'] !=NULL)						$temp_c1 .="\n_____________\n";
+				if($distanza[$f]['descrizione'] !=NULL)						$temp_c1 .="\n_____________\n";
 
 
 			}
